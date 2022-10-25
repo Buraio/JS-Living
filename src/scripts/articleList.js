@@ -26,7 +26,6 @@ function createArticle(element) {
 
   articleLi.append(articleImg, articleHeading, articleDesc, articleBtn);
 
-  // console.log(articleLi);
   return articleLi;
 
 }
@@ -36,10 +35,10 @@ console.log(newsArr)
 
 function renderArticles(arr) {
 
+  articleList.innerHTML = '';
   arr.forEach(article => {
     const item = createArticle(article);
     articleList.append(item);
-    // console.log(articleList);
   });
 
 }
@@ -55,6 +54,8 @@ function accessArticleEvent(button) {
 
     const article = await getById(event);
     localStorage.setItem('accessArticle', JSON.stringify(article));
+
+    location.replace('../../src/pages/article/index.html');
 
   })
 

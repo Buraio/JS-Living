@@ -4,7 +4,6 @@ const header = document.querySelector('.headerCont');
 const main = document.querySelector('.mainCont');
 console.log(main)
 
-
 renderArticle();
 
 function renderArticle() {
@@ -31,5 +30,18 @@ function renderArticle() {
 
   header.append(articleHeading, articleDesc);
   main.append(articleImg, articleContent);
+
+}
+
+goBackToHomepage();
+
+function goBackToHomepage() {
+
+  const homeBtn = document.querySelector('.backToHome');
+  console.log(homeBtn)
+
+  homeBtn.addEventListener('click', () => {
+    location.replace('../../../index.html');
+  })
 
 }
