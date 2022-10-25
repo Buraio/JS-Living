@@ -19,3 +19,13 @@
   --font-size-3: 1.25rem;
   --font-size-4: 1rem;
 }
+
+body {
+  width: 100vw;
+}
+
+.containerDiv {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
