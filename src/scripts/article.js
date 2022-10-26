@@ -9,7 +9,6 @@ renderArticle();
 function renderArticle() {
 
   const getArticle = JSON.parse(localStorage.getItem('accessArticle'));
-  console.log(getArticle)
 
   const articleHeading = document.createElement('h2');
   const articleDesc    = document.createElement('p');

@@ -1,4 +1,4 @@
-import { getNews, getById } from "./getApi.js";
+import { getById } from "./getApi.js";
 
 const articleList = document.querySelector('.articleList');
 
@@ -30,9 +30,6 @@ function createArticle(element) {
 
 }
 
-const newsArr = await getNews('news');
-console.log(newsArr)
-
 function renderArticles(arr) {
 
   articleList.innerHTML = '';
@@ -42,8 +39,6 @@ function renderArticles(arr) {
   });
 
 }
-
-renderArticles(newsArr);
 
 function accessArticleEvent(button) {
 
@@ -60,3 +55,5 @@ function accessArticleEvent(button) {
   })
 
 }
+
+export { renderArticles };

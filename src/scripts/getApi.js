@@ -19,12 +19,10 @@ async function getNews(selection) {
       }
       return response;
     }
-
   }
   catch (err) {
     console.log(err);
   }
-
 }
 
 async function getById(id) {
@@ -40,12 +38,13 @@ async function getById(id) {
       console.log(response)
       return response;
     }
-
   }
   catch (err) {
     console.log(err);
   }
-
 }
 
-export { getNews, getById }
+const newsArr = await getNews('news');
+console.log(newsArr)
+
+export { getNews, getById, newsArr }
