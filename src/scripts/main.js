@@ -1,7 +1,10 @@
-import { renderArticles } from "./articleList.js";
-import { newsArr } from "./getApi.js";
-import { applyFilter, getFilterFromLocalStorage } from "../scripts/filter.js";
+import { applyFilter, filterToLocalStorage, getFilterFromLocalStorage } from "../scripts/filter.js";
+import { observDiv, observer } from "./scroll.js";
 
 getFilterFromLocalStorage();
 
 applyFilter();
+
+filterToLocalStorage();
+
+observer.observe(observDiv);

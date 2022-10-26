@@ -1,20 +1,17 @@
 const url = 'https://m2-api-living.herokuapp.com/news';
 const header = { 'Content-Type': 'application/json' };
-const pageEndpoint = '?page=';
 
 async function getNews(selection) {
 
   try {
 
     const request = await fetch(url, {
+      method: 'GET',
       headers: header
     })
-    // console.log(request)
     if (request.ok) {
       const response = await request.json();
-      console.log(response)
       if (selection === 'news') {
-        console.log(response.news)
         return response.news;
       }
       return response;
@@ -30,12 +27,11 @@ async function getById(id) {
   try {
 
     const request = await fetch(`${url}/${id}`, {
+      method: 'GET',
       headers: header
     })
-    console.log(request)
     if (request.ok) {
       const response = await request.json();
-      console.log(response)
       return response;
     }
   }
@@ -45,6 +41,5 @@ async function getById(id) {
 }
 
 const newsArr = await getNews('news');
-console.log(newsArr)
 
-export { getNews, getById, newsArr }
+export { url, header, getNews, getById, newsArr }

@@ -52,4 +52,4 @@ function accessArticleEvent(button) {
   })
 }
 
-export { renderArticles };
+export { articleList, renderArticles, createArticle };

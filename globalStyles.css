@@ -29,3 +29,9 @@ body {
   max-width: 1600px;
   margin: 0 auto;
 }
+
+.observDiv {
+  width: 100%;
+  height: 100px;
+  background-color: red;
+}

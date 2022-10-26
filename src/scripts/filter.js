@@ -1,4 +1,4 @@
-import { getNews, newsArr } from "./getApi.js";
+import { newsArr } from "./getApi.js";
 import { renderArticles } from "./articleList.js";
 
 const filters = document.querySelectorAll('.filter');
@@ -11,27 +11,26 @@ async function applyFilter() {
   
       const event = e.target.innerText;
   
-      validateFilterText(event);
+      if (event === 'Todos') {
+        renderArticles(newsArr);
+      }
+      else {
+        validateFilterText(event);
+      }
     })
   })
 }
 
 function validateFilterText(event) {
 
-  if (event === 'Todos') {
-    renderArticles(newsArr);
-  }
-  else {
+  const newArr = newsArr.filter(article => {
 
-    const newArr = newsArr.filter(article => {
-
-      if (event === article.category) {
-        return article;
-      }
-    
-    })
-    renderArticles(newArr);
-  }
+    if (event === article.category) {
+      return article;
+    }
+  
+  })
+  renderArticles(newArr);
 }
 
 function filterToLocalStorage() {
@@ -42,8 +41,12 @@ function filterToLocalStorage() {
 
       const event = e.target.innerText;
 
-      localStorage.setItem('appliedFilter', event);
-
+      if (event !== 'Todos') {
+        localStorage.setItem('appliedFilter', event);
+      }
+      else {
+        localStorage.removeItem('appliedFilter');
+      }
     })
   })
 }
@@ -53,10 +56,10 @@ function getFilterFromLocalStorage() {
   const appliedFilter = localStorage.getItem('appliedFilter');
 
   if (appliedFilter) {
-
     validateFilterText(appliedFilter);
-    localStorage.removeItem('appliedFilter');
-
+  }
+  else {
+    renderArticles(newsArr);
   }
 }
 

@@ -1,10 +1,6 @@
-const title = document.querySelector('title');
-console.log(title.innerText);
+const title  = document.querySelector('title');
 const header = document.querySelector('.headerCont');
-const main = document.querySelector('.mainCont');
-console.log(main)
-
-completeArticle();
+const main   = document.querySelector('.mainCont');
 
 function completeArticle() {
 
@@ -32,8 +28,6 @@ function completeArticle() {
 
 }
 
-goBackToHomepage();
-
 function goBackToHomepage() {
 
   const homeBtn = document.querySelector('.backToHome');
@@ -42,3 +36,5 @@ function goBackToHomepage() {
     location.replace('../../../index.html');
   })
 }
+
+export { completeArticle, goBackToHomepage }
