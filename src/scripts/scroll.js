@@ -15,7 +15,6 @@ async function rollPages(counter) {
     if (request.ok) {
       const response = await request.json();
 
-      console.log(response)
       if (response.previusPage !== null) {
 
         if (response.news.length === 0) {
@@ -27,14 +26,11 @@ async function rollPages(counter) {
   
           if (jumpRequest.ok) {
             const response = await jumpRequest.json();
-            console.log(response.news)
   
             renderObserverArticles(response.news);
           }
         }
         else {
-          console.log(response.news);
-    
           renderObserverArticles(response.news);
         }
       }
@@ -51,7 +47,6 @@ const observer = new IntersectionObserver(elements => {
 
   if (elements.some(element => element.isIntersecting)) {
     if(!localStorage.getItem('appliedFilter')) {
-      console.log(pageNum)
       rollPages(pageNum++);
     }
   }

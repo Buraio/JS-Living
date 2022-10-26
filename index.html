@@ -6,23 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="./globalStyles.css">
+  <link rel="stylesheet" href="./src/styles/homeHeader.css">
+  <link rel="stylesheet" href="./src/styles/homeMain.css">
+  <link rel="stylesheet" href="./src/styles/footer.css">
 
   <title>Living</title>
 </head>
 <body>
-  <di class="containerDiv">
+  <div class="containerDiv">
     <header id="home">
-      <div>
-        <h1><span></span> Living</h1>
-        <h2>Trazendo uma nova e incrível experiência para você e para seu lar </h2>
-        <button>Consumir conteúdos</button>
+      <div class="separateDiv headerDiv">
+        <h1 class="logo"><span class="logoSpan"></span> Living</h1>
+        <h2 class="firstH2">Cuidando de cada <span>detalhe</span> da sua casa</h2>
+        <h2 class="secondH2">Trazendo uma nova e incrível experiência para você e para seu lar </h2>
+        <a href="#articles"><button>Consumir conteúdos</button></a>
       </div>
-      <figcaption>
+      <figcaption class="separateDiv imgDiv">
         <img src="./src/assets/img/headerImg.png" alt="">
       </figcaption>
     </header>
     <main>
-      <section class="filterNav">
+      <section id="articles" class="filterNav">
         <ul class="filterList">
           <li class="filter">Todos</li>
           <li class="filter">Pintura</li>
@@ -43,10 +47,10 @@
     </main>
   </div>
   <footer>
-    <div class="containerDiv">
-      <h4><span></span> Living</h4>
-      <p>The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.</p>
-      <a href="#home"><button class="backToTop">Vontar para o topo</button></a>
+    <div class="containerDiv footerDiv">
+      <h4 class="logo"><span class="logoSpan"></span> Living</h4>
+      <p class="footerText">The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.</p>
+      <a href="#home"><button class="backToTop">Voltar para o topo</button></a>
     </div>
   </footer>
 

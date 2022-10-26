@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,18 +22,32 @@
   --font-size-4: 1rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100vw;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+* button {
+  font-family:'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .containerDiv {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.observDiv {
-  width: 100%;
-  height: 100px;
-  background-color: red;
+.headerDiv button, .articleBtn {
+  align-self: flex-start;
+  font-size: 16px;
+  background-color: #fff;
+  border: none;
 }

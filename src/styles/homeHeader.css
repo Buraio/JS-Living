@@ -1,0 +1,46 @@
+#home {
+  width: 100%;
+  padding: 75px 0 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.separateDiv {
+  max-width: 575px;
+}
+
+.headerDiv {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.logo {
+  padding-bottom: 45px;
+}
+
+.firstH2 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 150%;
+}
+
+.firstH2 > span {
+  color: var(--color-brand-100);
+}
+
+.secondH2 {
+  max-width: 410px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.headerDiv button {
+  align-self: flex-start;
+}
+
+.imgDiv > img {
+  width: 100%;
+}
