@@ -1,5 +1,5 @@
 const title  = document.querySelector('title');
-const header = document.querySelector('.headerCont');
+const div = document.querySelector('.container');
 const main   = document.querySelector('.mainCont');
 
 function completeArticle() {
@@ -23,7 +23,7 @@ function completeArticle() {
   articleImg.src = getArticle.image;
   articleContent.innerText = getArticle.content;
 
-  header.append(articleHeading, articleDesc);
+  div.append(articleHeading, articleDesc);
   main.append(articleImg, articleContent);
 
 }

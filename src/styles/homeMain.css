@@ -1,35 +1,7 @@
-.filterNav {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.filterList {
-  max-width: 1130px;
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  flex-wrap: nowrap;
-  overflow-y: auto;
-}
-
-.filter {
-  height: 32px;
-  padding: 0 22px;
-  line-height: 200%;
-  background-color: var(--color-grey-700);
-  border-radius: 32px;
-  display: inline-block;
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--color-grey-200)
-}
-
 .articleList {
   margin: 25px 0 80px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
   list-style: none;
   gap: 90px;
