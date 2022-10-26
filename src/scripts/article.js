@@ -4,9 +4,9 @@ const header = document.querySelector('.headerCont');
 const main = document.querySelector('.mainCont');
 console.log(main)
 
-renderArticle();
+completeArticle();
 
-function renderArticle() {
+function completeArticle() {
 
   const getArticle = JSON.parse(localStorage.getItem('accessArticle'));
 
@@ -37,10 +37,8 @@ goBackToHomepage();
 function goBackToHomepage() {
 
   const homeBtn = document.querySelector('.backToHome');
-  console.log(homeBtn)
 
   homeBtn.addEventListener('click', () => {
     location.replace('../../../index.html');
   })
-
 }

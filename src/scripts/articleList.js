@@ -2,6 +2,15 @@ import { getById } from "./getApi.js";
 
 const articleList = document.querySelector('.articleList');
 
+function renderArticles(arr) {
+
+  articleList.innerHTML = '';
+  arr.forEach(article => {
+    const item = createArticle(article);
+    articleList.append(item);
+  });
+}
+
 function createArticle(element) {
 
   const articleLi      = document.createElement('li');
@@ -27,17 +36,6 @@ function createArticle(element) {
   articleLi.append(articleImg, articleHeading, articleDesc, articleBtn);
 
   return articleLi;
-
-}
-
-function renderArticles(arr) {
-
-  articleList.innerHTML = '';
-  arr.forEach(article => {
-    const item = createArticle(article);
-    articleList.append(item);
-  });
-
 }
 
 function accessArticleEvent(button) {
@@ -51,9 +49,7 @@ function accessArticleEvent(button) {
     localStorage.setItem('accessArticle', JSON.stringify(article));
 
     location.replace('../../src/pages/article/index.html');
-
   })
-
 }
 
 export { renderArticles };

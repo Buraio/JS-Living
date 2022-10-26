@@ -1,7 +1,7 @@
 import { renderArticles } from "./articleList.js";
 import { newsArr } from "./getApi.js";
-import { applyFilter } from "../scripts/filter.js";
+import { applyFilter, getFilterFromLocalStorage } from "../scripts/filter.js";
+
+getFilterFromLocalStorage();
 
 applyFilter();
-
-renderArticles(newsArr);
