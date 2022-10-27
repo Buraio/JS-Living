@@ -1,0 +1,29 @@
+.backToTop:hover {
+  background-color: var(--color-grey-300);
+  color: #fff;
+  transition-duration: var(--transition-time);
+}
+
+.filter:hover {
+  background-color: var(--color-grey-600);
+  transition-duration: var(--transition-time);
+}
+
+.selected:hover {
+  background-color: var(--color-brand-200);
+}
+
+.backToTop:not(:hover), .filter:not(:hover), .selected:not(:hover) {
+  transition-duration: var(--transition-time);
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(120%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}

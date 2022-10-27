@@ -1,0 +1,40 @@
+.articleList {
+  margin: 25px 0 80px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 90px;
+}
+
+.article {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  animation: loading 0.75s;
+}
+
+.articleImg {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.articleHeading {
+  margin-top: 16px;
+  font-size: 20px;
+}
+
+.articleDesc {
+  height: 50px;
+  font-weight: 400;
+  line-height: 150%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.articleBtn {
+  color: var(--color-brand-100);
+}

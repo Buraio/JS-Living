@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./globalStyles.css">
+  <link rel="stylesheet" href="./src/styles/homeHeader.css">
+  <link rel="stylesheet" href="./src/styles/homeMain.css">
+  <link rel="stylesheet" href="./src/styles/footer.css">
+  <link rel="stylesheet" href="./src/styles/effects.css">
+
+  <title>Living</title>
+</head>
+<body>
+  <div class="containerDiv">
+    <header id="home">
+      <div class="separateDiv headerDiv">
+        <h1 class="logo"><span class="logoSpan"></span> Living</h1>
+        <h2 class="firstH2">Cuidando de cada <span>detalhe</span> da sua casa</h2>
+        <h2 class="secondH2">Trazendo uma nova e incrível experiência para você e para seu lar </h2>
+        <a href="#articles"><button>Consumir conteúdos</button></a>
+      </div>
+      <figcaption class="separateDiv imgDiv">
+        <img src="./src/assets/img/headerImg.png" alt="">
+      </figcaption>
+    </header>
+    <main>
+      <section id="articles" class="filterNav">
+        <ul class="filterList">
+          <li class="filter">Todos</li>
+          <li class="filter">Pintura</li>
+          <li class="filter">Decoração</li>
+          <li class="filter">Organização</li>
+          <li class="filter">Limpeza</li>
+          <li class="filter">Segurança</li>
+          <li class="filter">Reforma</li>
+          <li class="filter">Aromas</li>
+          <li class="filter">Saúde</li>
+        </ul>
+      </section>
+      <section>
+        <ul class="articleList">
+        </ul>
+        <div class="observDiv"></div>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <div class="containerDiv footerDiv">
+      <h4 class="logo"><span class="logoSpan"></span> Living</h4>
+      <p class="footerText">The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.</p>
+      <a href="#home"><button class="backToTop">Voltar para o topo</button></a>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/scripts/getApi.js"></script>
+  <script type="module" src="./src/scripts/articleList.js"></script>
+  <script type="module" src="./src/scripts/filter.js"></script>
+  <script type="module" src="./src/scripts/main.js"></script>
+  <script type="module" src="./src/scripts/scroll.js"></script>
+</body>
+</html>
