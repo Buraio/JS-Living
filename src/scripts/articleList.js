@@ -43,7 +43,6 @@ function accessArticleEvent(button) {
   button.addEventListener('click', async (e) => {
 
     const event = e.target.getAttribute('data-article');
-    console.log(event)
 
     const article = await getById(event);
     localStorage.setItem('accessArticle', JSON.stringify(article));
