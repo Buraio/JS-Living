@@ -1,7 +1,7 @@
 import { articleList, createArticle } from "./articleList.js";
 import { url, header } from "./getApi.js";
 
-let pageNum = 1;
+let pageNum = 2;
 
 async function rollPages(counter) {
 
@@ -47,7 +47,8 @@ const observer = new IntersectionObserver(elements => {
 
   if (elements.some(element => element.isIntersecting)) {
     if(!localStorage.getItem('appliedFilter')) {
-      rollPages(pageNum++);
+      rollPages(pageNum);
+      pageNum++;
     }
   }
 })

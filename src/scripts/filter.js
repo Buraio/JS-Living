@@ -11,6 +11,10 @@ async function applyFilter() {
   
       const event = e.target.innerText;
   
+      filters.forEach(item => item.classList.remove('selected'));
+
+      filter.classList.add('selected');
+
       if (event === 'Todos') {
         renderArticles(newsArr);
       }
@@ -24,11 +28,9 @@ async function applyFilter() {
 function validateFilterText(event) {
 
   const newArr = newsArr.filter(article => {
-
     if (event === article.category) {
       return article;
     }
-  
   })
   renderArticles(newArr);
 }
@@ -40,6 +42,8 @@ function filterToLocalStorage() {
     filter.addEventListener('click', (e) => {
 
       const event = e.target.innerText;
+
+      addSelectedClass(filters, event);
 
       if (event !== 'Todos') {
         localStorage.setItem('appliedFilter', event);
@@ -56,11 +60,32 @@ function getFilterFromLocalStorage() {
   const appliedFilter = localStorage.getItem('appliedFilter');
 
   if (appliedFilter) {
+    addSelectedClass(filters, appliedFilter);
     validateFilterText(appliedFilter);
   }
   else {
     renderArticles(newsArr);
+    filters.forEach(filter => {
+      if (filter.innerText === 'Todos') {
+        filter.classList.add('selected');
+      }
+    })
   }
+}
+
+function addSelectedClass(arr, text) {
+
+  cleanSelectedClass(arr);
+
+  arr.forEach(item => {
+    if (item.innerText === text) {
+      item.classList.add('selected');
+    }
+  })
+}
+
+function cleanSelectedClass(arr) {
+  arr.forEach(item => item.classList.remove('selected'));
 }
 
 export { applyFilter, filterToLocalStorage, getFilterFromLocalStorage }

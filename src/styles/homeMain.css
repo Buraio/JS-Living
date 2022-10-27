@@ -13,6 +13,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 16px;
+  animation: loading 0.75s;
 }
 
 .articleImg {

@@ -45,3 +45,7 @@
 .imgDiv > img {
   width: 100%;
 }
+
+.firstH2, .secondH2 {
+  padding-bottom: 24px;
+}
