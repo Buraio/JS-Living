@@ -19,15 +19,15 @@ async function rollPages(counter) {
 
         if (response.news.length === 0) {
           counter++;
-          const jumpRequest = await fetch(`${url}?page=${counter}`, {
+          const backUpRequest = await fetch(`${url}?page=${counter}`, {
             method: 'GET',
             headers: header
           })
   
-          if (jumpRequest.ok) {
-            const response = await jumpRequest.json();
+          if (backUpRequest.ok) {
+            const backUpResponse = await backUpRequest.json();
   
-            renderObserverArticles(response.news);
+            renderObserverArticles(backUpResponse.news);
           }
         }
         else {
@@ -56,8 +56,8 @@ const observer = new IntersectionObserver(elements => {
 function renderObserverArticles(arr) {
 
   arr.forEach(article => {
-    const item = createArticle(article);
-    articleList.append(item);
+    const currentArticle = createArticle(article);
+    articleList.append(currentArticle);
   });
 
 }
