@@ -6,8 +6,8 @@ function renderArticles(arr) {
 
   articleList.innerHTML = '';
   arr.forEach(article => {
-    const item = createArticle(article);
-    articleList.append(item);
+    const currentArticle = createArticle(article);
+    articleList.append(currentArticle);
   });
 }
 

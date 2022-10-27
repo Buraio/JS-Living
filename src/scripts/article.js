@@ -1,6 +1,6 @@
 const title  = document.querySelector('title');
-const div = document.querySelector('.container');
-const main   = document.querySelector('.mainCont');
+const containerDiv = document.querySelector('.container');
+const mainContainer   = document.querySelector('.mainCont');
 
 function completeArticle() {
 
@@ -23,15 +23,13 @@ function completeArticle() {
   articleImg.src = getArticle.image;
   articleContent.innerText = getArticle.content;
 
-  div.append(articleHeading, articleDesc);
-  main.append(articleImg, articleContent);
+  containerDiv.append(articleHeading, articleDesc);
+  mainContainer.append(articleImg, articleContent);
 
 }
 
 function goBackToHomepage() {
-
   const homeBtn = document.querySelector('.backToHome');
-
   homeBtn.addEventListener('click', () => {
     location.replace('../../../index.html');
   })

@@ -1,17 +1,17 @@
 import { newsArr } from "./getApi.js";
 import { renderArticles } from "./articleList.js";
 
-const filters = document.querySelectorAll('.filter');
+const filterList = document.querySelectorAll('.filter');
 
 async function applyFilter() {
 
-  filters.forEach(filter => {
+  filterList.forEach(filter => {
   
     filter.addEventListener('click', (e) => {
   
       const event = e.target.innerText;
   
-      filters.forEach(item => item.classList.remove('selected'));
+      filterList.forEach(item => item.classList.remove('selected'));
 
       filter.classList.add('selected');
 
@@ -27,23 +27,23 @@ async function applyFilter() {
 
 function validateFilterText(event) {
 
-  const newArr = newsArr.filter(article => {
+  const filteredArticles = newsArr.filter(article => {
     if (event === article.category) {
       return article;
     }
   })
-  renderArticles(newArr);
+  renderArticles(filteredArticles);
 }
 
 function filterToLocalStorage() {
 
-  filters.forEach(filter => {
+  filterList.forEach(filter => {
 
     filter.addEventListener('click', (e) => {
 
       const event = e.target.innerText;
 
-      addSelectedClass(filters, event);
+      addSelectedClass(filterList, event);
 
       if (event !== 'Todos') {
         localStorage.setItem('appliedFilter', event);
@@ -60,12 +60,12 @@ function getFilterFromLocalStorage() {
   const appliedFilter = localStorage.getItem('appliedFilter');
 
   if (appliedFilter) {
-    addSelectedClass(filters, appliedFilter);
+    addSelectedClass(filterList, appliedFilter);
     validateFilterText(appliedFilter);
   }
   else {
     renderArticles(newsArr);
-    filters.forEach(filter => {
+    filterList.forEach(filter => {
       if (filter.innerText === 'Todos') {
         filter.classList.add('selected');
       }
